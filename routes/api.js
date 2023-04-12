@@ -23,7 +23,7 @@ function verifyToken(req,res,next){
 }
 
 // students full list read 
-router.get('/api/booklist', async (req, res) => {
+router.get('/booklist', async (req, res) => {
 
     try {
 
@@ -40,7 +40,7 @@ router.get('/api/booklist', async (req, res) => {
 
 // book add 
 
-router.post('/api/book',verifyToken, async (req, res) => {
+router.post('/book',verifyToken, async (req, res) => {
     try {
 
        // console.log(req.body)
@@ -68,7 +68,7 @@ router.post('/api/book',verifyToken, async (req, res) => {
 
 // Book delete 
 
-router.delete('/api/book/:id',verifyToken, async (req, res) => {
+router.delete('/book/:id',verifyToken, async (req, res) => {
     try {
          let token=req.headers
          console.log('token',token)
@@ -87,7 +87,7 @@ router.delete('/api/book/:id',verifyToken, async (req, res) => {
 // Book update 
 
 
-router.put('/api/book/:id', async (req, res) => {
+router.put('/book/:id', async (req, res) => {
     try {
 
         let id = req.params.id
@@ -103,7 +103,7 @@ router.put('/api/book/:id', async (req, res) => {
 })
 let token = '';
 //const jwt = require('jsonwebtoken');
-router.post('/api/auth', async (req, res) => {
+router.post('/auth', async (req, res) => {
     let loginemail = req.body.email;
     let loginpassword = req.body.password;
 
@@ -154,7 +154,7 @@ router.post('/api/auth', async (req, res) => {
 // Single student detail 
 
 
-router.get('/api/book/:id', async (req, res) => {
+router.get('/book/:id', async (req, res) => {
     try {
 
         let id = req.params.id
@@ -167,7 +167,7 @@ router.get('/api/book/:id', async (req, res) => {
     }
 })
 
-router.post('/api/signup', async (req, res) => {
+router.post('/signup', async (req, res) => {
     try {
 
         console.log(req.body)
